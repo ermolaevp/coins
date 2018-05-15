@@ -47,7 +47,7 @@ function uniqueQuotes({ result }: any) {
 
 const toURL = (path: string) => {
   if (production) {
-    return 'http://coinrating.11coders.com' + path;
+    return 'http://coins.11coders.com' + path;
   }
   return path;
 };
