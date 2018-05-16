@@ -45,11 +45,6 @@ function config(env, argv) {
           secure: true,
           changeOrigin: true,
         },
-        '/v2': {
-          target: 'https://api.coinmarketcap.com',
-          secure: true,
-          changeOrigin: true,
-        },
       },
     },
     plugins: [
