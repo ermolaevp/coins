@@ -1,12 +1,13 @@
 {
-  "name": "CoinRating-WebApp",
+  "private": true,
+  "name": "Coins",
   "repository": {
     "type": "git",
-    "url": "git@github.com:coinrating-admin/CoinRating-WebApp.git"
+    "url": "git@github.com:ermolaevp/coins.git"
   },
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.ts",
+  "main": "./src/index.tsx",
   "scripts": {
     "start": "webpack-dev-server --mode=development --hot",
     "build": "webpack --mode=production && webpack --config webpack.server.config.js",
