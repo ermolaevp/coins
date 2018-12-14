@@ -1,6 +1,4 @@
-import * as queryString from 'query-string';
-
-const production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === "production";
 
 const toJSON = (resp: any) => resp.json();
 
@@ -26,7 +24,7 @@ function normalizeMarketsResult({ result }: any) {
         price: toFloat(result[pair].a[0]),
         averagePrice: toFloat(result[pair].p[1]),
         volumeToday: toFloat(result[pair].v[0]),
-        tradesToday: result[pair].t[0],
+        tradesToday: result[pair].t[0]
       };
     }
   }
@@ -47,25 +45,25 @@ function uniqueQuotes({ result }: any) {
 
 const toURL = (path: string) => {
   if (production) {
-    return 'http://coins.11coders.com' + path;
+    return "https://coins.11coders.com" + path;
   }
   return path;
 };
 
 export function fetchMarkets(pairs: string[]) {
-  return fetch(toURL(`/0/public/Ticker?pair=${pairs.join(',')}`))
+  return fetch(toURL(`/0/public/Ticker?pair=${pairs.join(",")}`))
     .then(toJSON)
     .then(normalizeMarketsResult);
 }
 
-export function fetchAssetPairs(quote: string = 'ZUSD') {
-  return fetch(toURL('/0/public/AssetPairs'))
+export function fetchAssetPairs(quote: string = "ZUSD") {
+  return fetch(toURL("/0/public/AssetPairs"))
     .then(toJSON)
     .then(filterPairsByQuote(quote));
 }
 
 export function fetchQuotes() {
-  return fetch(toURL('/0/public/AssetPairs'))
+  return fetch(toURL("/0/public/AssetPairs"))
     .then(toJSON)
     .then(uniqueQuotes);
 }

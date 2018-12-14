@@ -1,8 +1,9 @@
 # Coins
 
-### Live http://coins.11coders.com/
+### Live https://cryptocoinsrate.firebaseapp.com
 
 ## Install modules
+
 `npm install`
 
 ## Start development server
